@@ -1,0 +1,141 @@
+[Files]
+File0=clientGui.java
+File1=..\Server\SpielServer.java
+File2=..\Server\SpielServerFrame.java
+File3=..\Server\TheGame.java
+
+[Box:  - clientGui]
+X=827
+Y=393
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - clientGui$BackgroundDrawer]
+X=793
+Y=2234
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - clientGui$Drawer]
+X=576
+Y=2234
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - clientGui$resetNameRunnable]
+X=1197
+Y=2234
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - clientGui$Task]
+X=1027
+Y=2234
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - MyDispatcher]
+X=862
+Y=40
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Server$ServerConnection]
+X=20
+Y=393
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Server$ServerSchleife]
+X=1148
+Y=40
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - SpielServer]
+X=376
+Y=393
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - SpielServerFrame]
+X=436
+Y=40
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - TheGame]
+X=199
+Y=2234
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Diagram]
+comments=0
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+ShowConnections=0
+Fontname=MS Sans Serif
+Fontsize=10
+ShowObjectDiagram=0
+
+[Connections]
+V0=clientGui#clientGui$BackgroundDrawer#AssociationDirected####0#0#0
+V1=clientGui#clientGui$Drawer#AssociationDirected####0#0#0
+V2=clientGui#clientGui$resetNameRunnable#AssociationDirected####0#0#0
+V3=clientGui#clientGui$Task#AssociationDirected####0#0#0
+V4=MyDispatcher#clientGui#AssociationDirected####0#0#0
+V5=SpielServer#TheGame#AssociationDirected####0#0#0
+V6=SpielServerFrame#SpielServer#AssociationDirected####0#0#0
+
+[Interactive]
+I0=
+
