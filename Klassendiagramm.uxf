@@ -1,0 +1,111 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>140</x><y>90</y><w>210</w><h>340</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt;
+MauMau
+--
+- AnzahlSpieler: INT
+- Spielphase: INT
+- MAX_Spieleranzahl: INT
+- Handkartenlimit: INT
+- AktuellerSpieler: Spieler
+- Ziehstapel: Deck
+- Ablagestapel: Deck
+- AlleSpielerImSpiel: Queue &lt;Spieler&gt;
+- SpielerFertig: Queue &lt;Spieler&gt;
+- AktiveSpieler: Queue &lt;Spieler&gt;
+- RundeVorbei: Boolean
+- startTime: Long
+- endTime: Long
+--
+C: MauMau(INT)
++ setSpielphase(): INT
++ setHandkartenlimit(): INT
++ startSpiel()
++ beendeSpiel()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>570</x><y>410</y><w>210</w><h>200</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt;
+Deck
+--
+- Anzahl: INT
+- Karten: Stack &lt;Karte&gt;
+--
+C: Deck(INT)
++ mischen()
++ kartenziehen(): Karte
++ karteablegen(): Karte
++ ersteKarte(): Karte
++ istLeer(): Boolean
++ deckUebergeben(): Deck
++ (Debug) Deckausgeben(): INT</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>570</x><y>660</y><w>210</w><h>140</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt;
+Karte
+--
++ KartenID: String
+- Wert: INT
+- Farbe: INT
+--
+C: Karte(INT,INT)
++ getWert(); INT
++ getFarbe(): INT</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>850</x><y>660</y><w>210</w><h>80</h></coordinates><panel_attributes>&lt;&lt;subclass&gt;&gt;
+MauMauKarte
+--
+- Funktion: INT
+--
+C: MauMauKarte(INT)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>190</y><w>210</w><h>280</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt;
+Spieler
+--
+- Name: String
+- Handkarten: List &lt;Karte&gt;
+- anderReihe:(Boolean)
+- AnzahlGewinne: INT
+- Bereit: Boolean
+--
+C: Spieler(String)
++ getName(): String
++ getAnDerReihe(): Boolean
++ letzteKarte(): String
++ spielStatus(): INT
++ setAnzahlGewinne()
++ getAnzahlGewinne(): INT
++ getBereit(): Boolean
++ setBereit()
++ getAnzahlHandkarten(): INT</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1090</x><y>330</y><w>210</w><h>120</h></coordinates><panel_attributes>&lt;&lt;subclass&gt;&gt;
+KI
+--
++ zeigeHandkarten(): List &lt;Karte&gt;
++ zeigeAblageStapel(): Karte
++ legeKarte(): Karte
++ nehmeKarte(Karte)
++ wunschFarbe(): INT</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1090</x><y>190</y><w>210</w><h>120</h></coordinates><panel_attributes>&lt;&lt;subclass&gt;&gt;
+Mensch
+--
++ zeigeHandkarten(): List &lt;Karte&gt;
++ zeigeAblageStapel(): Karte
++ legeKarte(): Karte
++ nehmeKarte(Karte)
++ wunschFarbe(): INT</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>250</x><y>510</y><w>240</w><h>200</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt;
+Anzeige
+--
++ getAnzahlSpieler(): INT
++ getSpielphase(): INT
++ getMaxSpielerAnzahl(): INT
++ getHandkartenLimit(): INT
++ getAktuellerSpieler()
++ getAlleSpielerImSpiel(): Queue &lt;Spieler&gt;
++ getSpielerFertig(): Queue &lt;Spieler&gt;
++ getAktiveSpieler():Queue &lt;Spieler&gt;
++ getRundeVorbei(): Boolean
++ getEndTime(): Long 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>510</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+Spielverhalten
+--
++ SpielerHinzufuegen(Spieler): Boolean
++ SpielerEntfernen(Spieler): Boolean
++ setAnzahlSpieler(): INT
++ checkSpielerAnzahl(): INT
++ setAktuellerSpieler(): Spieler
++ zugGueltig(): Boolean
++ setAlleSpielerImSpiel()
++ setSpielerFertig()
++ setAktiveSpieler()
++ setStartTime()
++ setGewinner(): Spieler
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1020</x><y>240</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1020</x><y>380</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>690</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>200</y><w>500</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>480;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>250</y><w>360</w><h>180</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>340;160;340;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>600</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>420</y><w>140</w><h>110</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>120;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>420</y><w>150</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;90;130;10</additional_attributes></element></diagram>
