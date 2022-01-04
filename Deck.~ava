@@ -107,7 +107,7 @@ public void zeigeKartenDebug(){
     String temp2 = aktuellekarte.getFarbe();
     String temp3 = aktuellekarte.getNameFunktion();
       
-    System.out.println(String.format("%s   %s   %s",temp, temp2, temp3));
+    System.out.println(String.format("%s |  %s |  %s",temp, temp2, temp3));
       
     debugK.push(aktuellekarte);
     karten.pop();
