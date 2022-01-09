@@ -8,18 +8,36 @@
 
 public class Deck {
 //Anfang Attribute:
-    private  Stack<MauMauKarte> karten = new Stack(); //der Stack beinhaltet den gemischten Ziehstapel von hier wird während des Spiels gezogen.
+    private Stack<MauMauKarte> karten = new Stack(); //der Stack beinhaltet den gemischten Ziehstapel von hier wird während des Spiels gezogen.
+    private int deckgroesse;
+
+    private Stack<MauMauKarte> deckInternSpeichern(Stack<MauMauKarte> _tempKarten){
+        Stack<MauMauKarte> tempKarten = new Stack();
+        while (!_tempKarten.isEmpty()) { 
+            tempKarten.push(_tempKarten.top());
+            _tempKarten.pop();
+            } // end of while 
+        return tempKarten;
+    }
+    private void deckleeren(){
+        while(!karten.isEmpty()){
+            karten.pop();
+        }
+    }
 //Ende Attribute:
-public Deck(){ //erschaft ein Deck der Größe 32
-    //erzeugt einen Stack mit den Zahlen von 2- zur Grenze
+public Deck(int _deckgroesse){ //erschaft ein Deck der Größe 32
+    deckgroesse = _deckgroesse;
+    
     int zaehler = 0;
-    while (zaehler <=31) { 
+    while (zaehler < deckgroesse) { 
     MauMauKarte spielkarte = new MauMauKarte(zaehler);
     karten.push(spielkarte);
     
     zaehler++;
     } // end of while
+    if (deckgroesse > 0){
     mischen();
+    }
 }
 
 //Anfang Methoden:
@@ -60,26 +78,7 @@ public  void mischen(){
         
 }
 //ende mischen
-//gibt den gemischten Stack als Debug aus. Kann in der Finalen Version gelöscht werden.
-public  String ausgebenDebug(){
-    String debugString = new String();
-    Stack<MauMauKarte> debugK = new Stack();
-    while (!karten.isEmpty()) { 
-    MauMauKarte aktuellekarte = karten.top();
-    int a = aktuellekarte.getID();
-    debugString += ""+a+" ;";
-    debugK.push(aktuellekarte);
-    karten.pop();
-    
-    } // end of while
-    //wieder den ursprünglichen Stack herstellen:
-    while (!debugK.isEmpty()) { 
-    MauMauKarte aktuellekarte = debugK.top();
-    karten.push(aktuellekarte);
-    debugK.pop();
-    } // end of while
-    return debugString;
-}
+
 //liefert True oder false, falls der Ziehstapel leer ist oder eben nicht.
 public  boolean istLeer(){
     return karten.isEmpty();
@@ -87,16 +86,44 @@ public  boolean istLeer(){
 //gibt die erste Karte des Ziehstapel als return zurück. Diese Karte wird automatisch vom Stapel gelöscht.
 public  MauMauKarte kartenziehen(){
     MauMauKarte temp = karten.top();
+    deckgroesse--;
     karten.pop();
     return temp;   
 }
 //legt eine Karte wieder auf das Deck zurück 
 public  void karteablegen(MauMauKarte pKarte){
     karten.push(pKarte);
+    deckgroesse++;
     }
-public Stack<MauMauKarte> deckUebergeben(){
-    return karten;
+
+public Stack<MauMauKarte> deckUebergeben(){ //Funktion wird nicht benötigt siehe Beispiel testDeckÜbergabe!
+    Stack<MauMauKarte> temp = deckInternSpeichern(karten);
+    deckleeren();
+    return temp;
   }
+
+public void erhalteDeck(Stack<MauMauKarte> newKarten){
+    karten = newKarten;
+    countDeck();
+    mischen();
+}
+
+public int countDeck(){
+    Stack<MauMauKarte> temp = new Stack();
+    int counter = 0;
+    while(!karten.isEmpty()){ //lösche solange der Stapel nicht leer ist pro Durchlauf eine Karte vom Stapel. Pro Durchlauf wird der Counter um eins erhöht.
+        temp.push(karten.top());
+        karten.pop();
+        counter++;
+    }
+    //wieder den ursprünglichen Stack herstellen:
+    while (!temp.isEmpty()) { 
+        karten.push(temp.top());
+        temp.pop();
+        } // end of while 
+    deckgroesse = counter;
+    return counter;
+}  
 public void zeigeKartenDebug(){
   Stack<MauMauKarte> debugK = new Stack();
   System.out.println("Gibt das aktuelle Deck aus:");  
