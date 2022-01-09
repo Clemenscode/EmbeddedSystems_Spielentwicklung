@@ -48,7 +48,7 @@ MauMauKarte
 --
 - Funktion: INT
 --
-C: MauMauKarte(INT)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>190</y><w>210</w><h>280</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt;
+C: MauMauKarte(INT)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>190</y><w>210</w><h>260</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt;
 Spieler
 --
 - Name: String
@@ -61,7 +61,6 @@ C: Spieler(String)
 + getName(): String
 + getAnDerReihe(): Boolean
 + letzteKarte(): String
-+ spielStatus(): INT
 + setAnzahlGewinne()
 + getAnzahlGewinne(): INT
 + getBereit(): Boolean
@@ -69,15 +68,15 @@ C: Spieler(String)
 + getAnzahlHandkarten(): INT</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1090</x><y>330</y><w>210</w><h>120</h></coordinates><panel_attributes>&lt;&lt;subclass&gt;&gt;
 KI
 --
-+ zeigeHandkarten(): List &lt;Karte&gt;
-+ zeigeAblageStapel(): Karte
++ zeigeHandkarten()
++ zeigeAblageStapel(Karte)
 + legeKarte(): Karte
 + nehmeKarte(Karte)
 + wunschFarbe(): INT</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1090</x><y>190</y><w>210</w><h>120</h></coordinates><panel_attributes>&lt;&lt;subclass&gt;&gt;
 Mensch
 --
-+ zeigeHandkarten(): List &lt;Karte&gt;
-+ zeigeAblageStapel(): Karte
++ zeigeHandkarten()
++ zeigeAblageStapel(Karte)
 + legeKarte(): Karte
 + nehmeKarte(Karte)
 + wunschFarbe(): INT</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>250</x><y>510</y><w>240</w><h>200</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt;
