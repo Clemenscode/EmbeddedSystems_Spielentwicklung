@@ -40,7 +40,7 @@ public class Karte {
             _Farbe = "Kreuz";
             break;
             case 1:
-            _Farbe = "PIC";
+            _Farbe = "Pic";
             break;
             case 2:
             _Farbe = "Herz";
