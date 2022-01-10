@@ -56,7 +56,7 @@ Mensch
 + zeigeAblageStapel(Karte)
 + legeKarte(): Karte
 + nehmeKarte(Karte)
-+ wunschFarbe(): INT</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1020</x><y>240</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1020</x><y>380</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>690</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>200</y><w>500</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>480;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>250</y><w>360</w><h>180</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>340;160;340;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>600</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>120</y><w>290</w><h>590</h></coordinates><panel_attributes>MauMau
++ wunschFarbe(): INT</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1020</x><y>240</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1020</x><y>380</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>690</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>600</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>120</y><w>290</w><h>590</h></coordinates><panel_attributes>MauMau
 --
 - ziehstapel: Deck
 - ablagestapel: Deck
@@ -95,4 +95,8 @@ Mensch
 + legeKarteAufStapel(MauMauKarte, Mensch): void
 + zugBeenden(Mensch): void
 + checkWin(Mensch): void
-+ spielSchleife(): void</panel_attributes><additional_attributes></additional_attributes></element></diagram>
++ spielSchleife(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>190</y><w>500</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2= *</panel_attributes><additional_attributes>10;10;480;10</additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>270</y><w>400</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=2</panel_attributes><additional_attributes>10;10;370;10;370;140</additional_attributes></element></diagram>
