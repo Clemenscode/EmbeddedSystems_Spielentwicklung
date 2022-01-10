@@ -329,9 +329,7 @@ public class MauMau {
         } else {
             System.out.println(sk.getFunktion());
             if (sk.getFunktion() == 3){
-                System.out.println("Funktion = 3 erkannt");
                 if (sk.getFarbe().equals(temp.getFarbe())){
-                    System.out.println("Hier 1");
                     return 1;
                 } //Gleiche Farbe des Farbwunschs
 
