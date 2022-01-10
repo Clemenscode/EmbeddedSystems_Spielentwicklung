@@ -1,0 +1,23 @@
+public class main {
+    //Mit dieser Klasse, kann jede Funktion des Decks und der darunter liegenden Karte getestet und validiert werden.
+    public static void  main(String[] args) {
+       MauMau spiel = new MauMau(5);
+
+       spiel.addSpieler("Daniel");
+       spiel.addSpieler("Peter");
+       spiel.addSpieler("Fritz");
+       spiel.getSpielerNamen(0);
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}

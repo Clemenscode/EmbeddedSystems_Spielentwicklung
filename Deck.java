@@ -124,6 +124,24 @@ public int countDeck(){
     deckgroesse = counter;
     return counter;
 }  
+public void zeigeObersteKarte(){
+    if (karten.top().getFunktion() != 0){
+        System.out.println(String.format("Die oberste Karte ist: | %s | %s | %s",
+        karten.top().getFarbe(),
+        karten.top().getWert(),
+        karten.top().getNameFunktion()));
+    } else {
+        System.out.println(String.format("Die oberste Karte ist: | %s | %s ",
+        karten.top().getFarbe(),
+        karten.top().getWert()));
+    }
+}
+
+public MauMauKarte getObersteKarte(){
+    return karten.top();
+}
+
+
 public void zeigeKartenDebug(){
   Stack<MauMauKarte> debugK = new Stack();
   System.out.println("Gibt das aktuelle Deck aus:");  

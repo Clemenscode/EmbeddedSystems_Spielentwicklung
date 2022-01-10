@@ -13,7 +13,7 @@ public class KI extends Spieler{
     private Karte Karte;
     public KI(String Name)              {super(Name);}
     public void     zeigeHandkarte()        {}
-    public void    zeigeAblageStapel(Karte Karte)     {
+    public void    zeigeAblageStapel(MauMauKarte Karte)     {
         this.Karte = Karte;
     }
     public Karte    legeKarte()             {
@@ -35,7 +35,7 @@ public class KI extends Spieler{
         return lKarte;
 
     }
-    public void     nehmeKarte(Karte Karte) {super.Handkarte.add(Karte);}
+    public void     nehmeKarte(MauMauKarte Karte) {super.Handkarte.add(Karte);}
     public String      wunschFarbe()           {
         int cntKreuz = 0;
         int cntKaro = 0;

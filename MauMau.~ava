@@ -1,6 +1,85 @@
 public class MauMau {
+    private Deck ziehstapel ;
+    private Deck ablagestapel ;
+    private int anzahlSpieler = 0;
+    private int spielphase = 0;
+    private int maxSpieleranzahl = 5;
+    private Queue <Mensch> alleMenschSpieler = new Queue();
+    private Queue <Mensch> spielerFertig = new Queue();
+    private Queue <Mensch> spielerImSpiel = new Queue();
+    private boolean rundeVorbei = false;
+
+    public MauMau (int _maxSpieleranzahl){
+        ziehstapel = new Deck(32);
+        ablagestapel = new Deck(0);
+        //TODO:
+        maxSpieleranzahl = _maxSpieleranzahl;
+    }
+
+    public void setSpielphase(int _sp){
+        spielphase = _sp;
+    }
+
+    public int getSpielphase(){
+        return spielphase;
+    }
+
+    public void setSpielerAnzahl (int _sa){
+        anzahlSpieler += _sa;
+    }
+    public int getSpielerAnzahl (){
+        return anzahlSpieler;
+    }
+
+    public void addSpieler(String _name){
+        if (getSpielphase() == 0){
+            if (getSpielerAnzahl() <= maxSpieleranzahl){
+                Mensch temp = new Mensch(_name);
+                alleMenschSpieler.enqueue(temp);
+                System.out.println(String.format("Der Spieler '%s' wurde erfolgreich dem Spiel hinzugefuegt.",_name));
+            } else {
+                System.out.println(String.format("Der Spieler '%s' kann nicht mehr hinzugefuegt werden, da bereits die maximale Spileranzahl mit %s erreicht wurde.",_name, maxSpieleranzahl));
+            }
+        } else {
+            System.out.println(String.format("Der Spieler '%s' kann nicht mehr hinzugefuegt werden, da das Spiel bereits laeuft..",_name));
+        }
+    }
+
+    public void getSpielerNamen(int _Queue){
+        switch (_Queue) {
+            case 0: //alleMenschSpieler
+                gsn(alleMenschSpieler);
+                break;
+            case 1: //alle Spieler im Spiel
+                gsn(spielerImSpiel);
+                break;
+            case 2: //alle Spieler die Fertig sind.
+                gsn(spielerFertig);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void gsn(Queue<Mensch> temp){
+        Mensch firstSpieler = temp.front();
+        temp.enqueue(firstSpieler);
+        temp.dequeu();
+        System.out.println(String.format("Im Spiel befinden sich die Spieler: "));
+        while( temp.front().getName() != firstSpieler.getName() ) {
+            System.out.print(String.format("%s , ",temp.front().getName()));
+            temp.enqueue(temp.front());
+            temp.dequeu();
+        }
+        System.out.println(String.format("%s.",firstSpieler.getName()));
+    }
+
+
     public static void  main(String[] args) {
-       Deck ziehstapel = new Deck();
+       Deck ziehstapel = new Deck(32);
        ziehstapel.zeigeKartenDebug();
     }
+
+
+
 }

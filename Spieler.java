@@ -13,11 +13,11 @@ public class Spieler {
     private int     AnzahlGewinne;
     private boolean Bereit;
     private boolean anderReihe;
-    protected List<Karte> Handkarte;
+    protected List<MauMauKarte> Handkarte;
 
     public Spieler(String Name)             {
         this.Name = Name;
-        Handkarte = new ArrayList<Karte>();
+        Handkarte = new ArrayList<MauMauKarte>();
     }
     public String   getName()               {return Name;}
     public boolean  getAnDerReihe()         {return anderReihe;}
